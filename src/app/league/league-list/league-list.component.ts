@@ -1,4 +1,4 @@
-import { Component, inject, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { AbstractLeagueService } from '../abstract-league.service';
 import { League } from '../league.model';
 import { Subscription } from 'rxjs';
@@ -12,7 +12,7 @@ import { Subscription } from 'rxjs';
 })
 export class LeagueListComponent implements OnInit, OnDestroy{
 
-  private readonly leagueService = inject(AbstractLeagueService);
+  constructor(private readonly leagueService: AbstractLeagueService) {}
 
   private _subscription: Subscription | undefined = undefined;
 
