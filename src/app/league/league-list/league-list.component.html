@@ -1,0 +1,11 @@
+<div>
+    <h2>Available leagues:</h2>
+
+<ul>
+    @for (league of leagues; track $index) {
+        <li>
+            <span>{{league.leagueName}} ({{league.leagueShortcut}})</span> : <span>{{league.leagueSeason}}</span>
+        </li>
+    }
+</ul>
+</div>
