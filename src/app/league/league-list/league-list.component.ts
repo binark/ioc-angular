@@ -1,7 +1,7 @@
 import { Component, inject, OnDestroy, OnInit } from '@angular/core';
-import { AbstractLeagueService } from '../abstract-league.service';
 import { League } from '../league.model';
 import { Subscription } from 'rxjs';
+import { LeagueService } from '../league.service';
 
 @Component({
   selector: 'app-league-list',
@@ -12,7 +12,7 @@ import { Subscription } from 'rxjs';
 })
 export class LeagueListComponent implements OnInit, OnDestroy{
 
-  private readonly leagueService = inject(AbstractLeagueService);
+  private readonly leagueService = inject(LeagueService);
 
   private _subscription: Subscription | undefined = undefined;
 
