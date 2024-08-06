@@ -1,27 +1,24 @@
 # InversionOfControl
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.6.
+A simple project (tutorial) to show how to setup mocked data in Angular project following best programming practices.
 
-## Development server
+Watch the video here: 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Key concept
 
-## Code scaffolding
+**IOC** states that higher classes shouldn't dependent directly on lower concrete classes but on abstraction (abtract classes or interfaces). That brings flexibility to switch between implementations.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+!["Inversion Of Control Illustration"](with-ioc.png)
 
-## Build
+Like we are in Angular application, we created a sequence diagram to show how allows to implement that concept.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+!["Angular IOC implementation for this use case"](ioc-angular-sequence-diag.png)
 
-## Running unit tests
+To illustrate how Angular provider can acts like a central component in a **Strategy Pattern**, we created that last diagram.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+!["Strategy Pattern"](ioc-angular-strategy-diag.png)
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Finally, we can say that when IOC is well used, Its enforces to respect orders principles like:
+* **SRP (Single Responsability Principle)**: because differents behaviors are implemented in differents classes.
+* **OCP (Open Close Principle)**: Each time we need to a new behavoir, we avoid to modify existing classes, instead we create new implementation of existing that will be used later.
+* **LSP (Liskov  Substitution Principle)**: We are able to switch between implementations without breaking the system.
